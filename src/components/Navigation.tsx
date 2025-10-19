@@ -1,7 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export const Navigation = () => {
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "Work", href: "#work" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 lg:px-12">
       <div className="flex items-center justify-between">
@@ -19,13 +34,34 @@ export const Navigation = () => {
           >
             Contact Us
           </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="text-foreground hover:text-primary"
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
+          
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-foreground hover:text-primary"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="bg-background border-l border-border">
+              <SheetHeader>
+                <SheetTitle className="text-foreground text-left">Menu</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-6 mt-8">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
