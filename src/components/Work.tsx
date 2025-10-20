@@ -16,12 +16,27 @@ const projects = [
     title: "AI Integration",
     category: "Technology",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop"
+  },
+  {
+    title: "Finance and Insurance",
+    category: "Fintech",
+    image: "https://images.unsplash.com/photo-1554224155-1696413565d3?w=800&h=600&fit=crop"
+  },
+  {
+    title: "Fashion and Beauty",
+    category: "E-commerce & Lifestyle",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop"
+  },
+  {
+    title: "Education and Charity",
+    category: "Non-profit",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop"
   }
 ];
 
 export const Work = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="work" className="py-24 bg-background/50 h-screen overflow-y-auto">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mb-16">
           <p className="text-muted-foreground text-sm uppercase tracking-wider mb-4">
@@ -33,10 +48,10 @@ export const Work = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div 
-              key={index}
-              className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
+              key={project.title}
+              className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer animate-in zoom-in-90 duration-500"
             >
               <img 
                 src={project.image} 

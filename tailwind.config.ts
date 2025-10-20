@@ -89,7 +89,7 @@ export default {
         },
         float: {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-20px) rotate(5deg)" },
+          "50%": { transform: "translateY(-30px) rotate(15deg)" },
         },
       },
     },

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
@@ -24,16 +23,9 @@ const Index = () => {
         activeSection={activeSection}
         onNavigate={setActiveSection}
       />
-      <main className="relative overflow-hidden">
-        <TransitionGroup component={null}>
-          <CSSTransition
-            key={activeSection}
-            timeout={500}
-            classNames="slide-from-bottom"
-          >
-            {sections[activeSection]}
-          </CSSTransition>
-        </TransitionGroup>
+      <main>
+        {/* Render only the active section */}
+        {sections[activeSection]}
       </main>
     </>
   );

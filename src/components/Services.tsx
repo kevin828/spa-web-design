@@ -30,14 +30,14 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 bg-secondary/50">
+    <section id="services" className="py-24 bg-secondary/50 h-screen overflow-y-auto">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mb-16">
           <p className="text-muted-foreground text-sm uppercase tracking-wider mb-4">
             服務項目
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <h2 className="text-4xl lg:text-6xl font-bold text-foreground">
+            <h2 className="text-4xl lg:text-6xl font-bold text-foreground animate-in slide-in-from-left-12 duration-500">
               OUR SERVICES
             </h2>
             <div className="max-w-xl">
@@ -56,9 +56,9 @@ export const Services = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div 
-              key={index}
+              key={service.title}
               className="group p-8 bg-card border border-border rounded-lg hover:border-primary transition-all duration-300"
             >
               <span className="text-primary text-sm font-mono mb-4 block">
